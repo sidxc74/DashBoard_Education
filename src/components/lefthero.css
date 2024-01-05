@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+.Upperchart {
+    display: grid;
+    width: 90%;
+    align-items: center;
+    margin-inline: auto;
+    grid-template-areas: 'one two three four';
+    justify-content: space-between;
+}
+
+.Upperchart > div {
+    border-left: 4px solid purple;
+    border-radius: 4px;
+}
+
+.layer2 {
+    display: grid;
+    gap: 4rem;
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 4rem;
+    align-items: center;
+    grid-template-areas: 'one one one two';
+}
+
+.layer2 > div:first-child {
+    grid-area: one;
+}
+
+.layer2 > div:last-child {
+    grid-area: two;
+}
+
+.layer3 {
+    display: grid;
+    width: 90%;
+    gap:10rem;
+    align-items: center;
+    margin-inline: auto;
+    grid-template-areas: 'one two three';
+}
+
+.layer3 :first-child {
+    grid-area: one;
+}
+
+.layer3 :nth-child(2) {
+    grid-area: two;
+}
+
+.layer3 :last-child {
+    grid-area: three;
+}
+
+@media (max-width: 1280px) {
+    .Upperchart {
+        grid-template-areas: 'one two' 'three four';
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .layer3{
+        grid-template-areas: 'one two' 'three three';
+        justify-content: center;
+    }
+}
+
+@media (max-width: 720px) {
+    .Upperchart {
+        grid-template-areas: 'one' 'two' 'three' 'four';
+        justify-content: center;
+    }
+
+    .layer2{
+        grid-template-areas: 'one'  'two';
+        justify-content: center;
+    }
+    .layer3{
+        grid-template-areas: 'one' 'two' 'three';
+        justify-content: center;
+    }
+}
+
